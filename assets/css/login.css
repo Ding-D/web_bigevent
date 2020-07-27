@@ -26,7 +26,7 @@ body {
 }
 
 .login-box {
-    width: 300px;
+    width: 340px;
     margin: auto;
     /* display: flex;
 flex-direction: column; */
@@ -51,7 +51,7 @@ flex-direction: column; */
 }
 
 .reg-box {
-    width: 300px;
+    width: 340px;
     margin: auto;
     display: none;
 }
