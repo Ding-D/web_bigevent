@@ -1,0 +1,75 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../images/login_bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.loginAndRegBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    /*css3样式 tranform：平移*/
+}
+
+.title-box {
+    /* 宽度继承父元素的 */
+    height: 60px;
+    background: url(../images/login_title.png) no-repeat center;
+}
+
+.login-box {
+    width: 300px;
+    margin: auto;
+    /* display: flex;
+flex-direction: column; */
+}
+
+.login-box .layui-form-item {
+    position: relative;
+}
+
+.login-box .layui-form-item input {
+    padding-left: 30px;
+}
+
+.login-box .layui-form-item i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.login-box .layui-form-item a {
+    float: right;
+}
+
+.reg-box {
+    width: 300px;
+    margin: auto;
+    display: none;
+}
+
+.reg-box .layui-form-item {
+    position: relative;
+}
+
+.reg-box .layui-form-item input {
+    padding-left: 30px;
+}
+
+.reg-box .layui-form-item i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.reg-box .layui-form-item a {
+    float: right;
+}
