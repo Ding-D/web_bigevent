@@ -57,13 +57,15 @@ $(function () {
         var data = {
             username: $('#form_login [name=username]').val(), password: $('#form_login [name=password]').val()
         };
-        $.post('http://ajax.frontend.itheima.net/api/reguser', data, function (res) {
+        $.post('http://ajax.frontend.itheima.net/api/login', data, function (res) {
             if (res.status !== 0) {
-                return layer.msg(res.message);
+                return layer.msg('登陆失败！');
 
             }
-            layer.msg('注册成功！')
-            $('#link_login').click();
+            layer.msg('登录成功！')
+
+            //跳转到后台
+            location.href = '/index.html'
         })
     })
 })
