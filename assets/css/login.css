@@ -1,75 +1,55 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background: url(../images/login_bg.jpg) no-repeat center;
-    background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: url('/assets/images/login_bg.jpg') no-repeat center;
+  background-size: cover;
 }
 
 .loginAndRegBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 310px;
-    background-color: #fff;
-    transform: translate(-50%, -50%);
-    /*css3样式 tranform：平移*/
+  width: 400px;
+  height: 310px;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title-box {
-    /* 宽度继承父元素的 */
-    height: 60px;
-    background: url(../images/login_title.png) no-repeat center;
-}
-
-.login-box {
-    width: 340px;
-    margin: auto;
-    /* display: flex;
-flex-direction: column; */
-}
-
-.login-box .layui-form-item {
-    position: relative;
-}
-
-.login-box .layui-form-item input {
-    padding-left: 30px;
-}
-
-.login-box .layui-form-item i {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.login-box .layui-form-item a {
-    float: right;
+  height: 60px;
+  background: url('/assets/images/login_title.png') no-repeat center;
 }
 
 .reg-box {
-    width: 340px;
-    margin: auto;
-    display: none;
+  display: none;
 }
 
-.reg-box .layui-form-item {
-    position: relative;
+.layui-form {
+  padding: 0 30px;
 }
 
-.reg-box .layui-form-item input {
-    padding-left: 30px;
+.links {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.reg-box .layui-form-item i {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+.links a {
+  font-size: 12px;
 }
 
-.reg-box .layui-form-item a {
-    float: right;
+.layui-form-item {
+  position: relative;
+}
+
+.layui-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.layui-input {
+  padding-left: 32px;
 }
