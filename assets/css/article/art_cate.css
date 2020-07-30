@@ -8,3 +8,7 @@ body {
     padding: 15px;
     background-color: #f2f3f5;
 }
+
+.layui-layer-page .layui-layer-content {
+    padding: 20px 20px;
+}
