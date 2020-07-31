@@ -57,26 +57,32 @@
     </script>
 
     <script type="text/html" id="dialog-add">
-            <form action="" class="layui-form" id="form_login">
+            <form action="" class="layui-form" id="boxEditCate">
                 <div class="layui-form-item">
                     <label class="layui-form-label">输入框</label>
                     <div class="layui-input-block">
-                      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                      <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
                     </div>
                   </div>
+
+
                   <div class="layui-form-item">
                     <label class="layui-form-label">输入框</label>
                     <div class="layui-input-block">
-                      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                      <input type="text" name="alias" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
                     </div>
                   </div>
+
+
                 <!-- 表单提交按钮和普通按钮的区别就是lay-submit属性 -->
-                <div class="layui-input-block">
-                    <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit
-                        lay-filter="formDemo">确定</button>
-                        <button type="reset" class="layui-btn layui-btn-radius layui-btn-warm layui-btn-primary">重置</button>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn layui-btn-radius layui-btn-normal" lay-submit
+                            lay-filter="formDemo">确定</button>
+                            <button type="reset" class="layui-btn layui-btn-radius layui-btn-warm layui-btn-primary">重置</button>
+                    </div>
                 </div>
-            </form>
+            </form> 
     </script>
     <script type="text/html" id="dialog-edit">
             <form action="" class="layui-form" id="form-edit" lay-filter="form-edit">

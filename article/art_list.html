@@ -13,13 +13,34 @@
 
     <body>
         <div class="layui-card">
-            <div class="layui-card-head">文章列表</div>
+            <div class="layui-card-head">
+                <span>文章列表</span>
+
+            </div>
             <div class="layui-card-body">
+                <!-- 筛选区域 -->
+                <form class="layui-form" id="form-search">
+                    <div class="layui-form-item layui-inline">
+                        <select name="cate_id"></select>
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <select name="state">
+                            <option value="">所有状态</option>
+                            <option value="已发布">已发布</option>
+                            <option value="草稿">草稿</option>
+                        </select>
+                    </div>
+                    <div class="layui-form-item layui-inline">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+                    </div>
+                </form>
                 <table class="layui-table">
                     <colgroup>
                         <col>
-                        <col>
-                        <col width="200">
+                        <col width="150">
+                        <col width="180">
+                        <col width="150">
+                        <col width="150">
                     </colgroup>
                     <thead>
                         <tr>
@@ -32,6 +53,8 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+                <!-- 分页区域 -->
+                <div id="pageBox"></div>
             </div>
         </div>
         <script type="text/html" id="tpl-table">
@@ -48,10 +71,16 @@
               </tr>
             {{/each}}
         </script>
-        <script src="../assets/lib/layui/\/layui.all.js"></script>
+        <script type="text/html" id="tpl-cate">
+            <option value="">所有分类</option>
+            {{each data}}
+            <option value="{{$value.Id}}">{{$value.name}}</option>
+            {{/each}}
+        </script>
+        <script src="../assets/lib/layui/layui.all.js"></script>
         <script src="../assets/lib/jquery.js"></script>
-        <script src="../assets/lib/template-web.js"></script>
         <script src="../assets/js/baseAPI.js"></script>
+        <script src="../assets/lib/template-web.js"></script>
         <script src="../assets/js/article/art_list.js"></script>
     </body>
 

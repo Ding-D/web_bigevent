@@ -10,6 +10,7 @@ $(function () {
             method: 'GET',
             url: '/my/article/cates',
             success: function (res) {
+                console.log(res);
                 var htmlStr = template('tpl-table', res);
                 $('tbody').html(htmlStr);
             }
@@ -29,13 +30,14 @@ $(function () {
     })
 
     // 通过代理的形式，为form-add表单绑定submit事件
-    $('body').on('submit', '#form-add', function (e) {
+    $('body').on('submit', '#boxEditCate', function (e) {
         e.preventDefault();
         $.ajax({
             method: "POST",
             url: '/my/article/addcates',
             data: $(this).serialize(),
             success: function (res) {
+                console.log(res);
                 if (res.status !== 0) {
                     return layer.msg('上传失败')
                 }
