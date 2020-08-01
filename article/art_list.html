@@ -14,26 +14,32 @@
     <body>
         <div class="layui-card">
             <div class="layui-card-head">
-                <span>文章列表</span>
-
+                <h3>文章列表</h3>
             </div>
             <div class="layui-card-body">
+
                 <!-- 筛选区域 -->
                 <form class="layui-form" id="form-search">
+                    <!-- 分类筛选框 -->
                     <div class="layui-form-item layui-inline">
                         <select name="cate_id"></select>
                     </div>
+                    <!-- 状态筛选框 -->
                     <div class="layui-form-item layui-inline">
                         <select name="state">
                             <option value="">所有状态</option>
                             <option value="已发布">已发布</option>
                             <option value="草稿">草稿</option>
+                            <!-- option内的文本是展示用 value中的文本才是点击后选中的 -->
                         </select>
                     </div>
+                    <!-- 筛选提交按钮 -->
                     <div class="layui-form-item layui-inline">
                         <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
                     </div>
                 </form>
+
+                <!-- 文章列表区 -->
                 <table class="layui-table">
                     <colgroup>
                         <col>
@@ -53,10 +59,13 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+
                 <!-- 分页区域 -->
                 <div id="pageBox"></div>
             </div>
         </div>
+
+        <!-- 文章列表引擎模板 -->
         <script type="text/html" id="tpl-table">
             {{each data}}
             <tr>
@@ -65,18 +74,22 @@
                 <td>{{$value.pub_date|dataFormat}}</td>
                 <td>{{$value.state}}</td>
                 <td>
-                  <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-                  <button type="button" class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                  <button type="button" class="layui-btn layui-btn-xs btn-edit" data-id = "{{$value.Id}}">编辑</button>
+                  <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id = "{{$value.Id}}">删除</button>
                 </td>
               </tr>
             {{/each}}
         </script>
+
+        <!-- 筛选框引擎模板 -->
         <script type="text/html" id="tpl-cate">
             <option value="">所有分类</option>
             {{each data}}
             <option value="{{$value.Id}}">{{$value.name}}</option>
             {{/each}}
         </script>
+
+        <!-- 引入js文件 -->
         <script src="../assets/lib/layui/layui.all.js"></script>
         <script src="../assets/lib/jquery.js"></script>
         <script src="../assets/js/baseAPI.js"></script>

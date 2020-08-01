@@ -55,14 +55,27 @@ $(function () {
     $('#form_login').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
-        $.post('http://ajax.frontend.itheima.net/api/login', data, function (res) {
-            if (res.status !== 0) {
-                return layer.msg('登陆失败！');
+        // $.post('http://ajax.frontend.itheima.net/api/login', data, function (res) {
+        //     if (res.status !== 0) {
+        //         return layer.msg('登陆失败！');
+        //     }
+        //     layer.msg('登录成功！')
+        //     localStorage.setItem('token', res.token)
+        //     //跳转到后台
+        //     location.href = '../../index.html';
+        // })
+        $.ajax({
+            method: "POST",
+            url: '/api/login',
+            data: data,
+            success: function (res) {
+                if (res.status !== 0) {
+                    return layer.msg(res.message)
+                }
+                layer.msg(res.message)
+                localStorage.setItem('token', res.token)
+                location.href = '../../index.html'
             }
-            layer.msg('登录成功！')
-            localStorage.setItem('token', res.token)
-            //跳转到后台
-            location.href = '../../index.html';
         })
     })
 })
