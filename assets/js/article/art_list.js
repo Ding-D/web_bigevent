@@ -169,10 +169,16 @@ $(function () {
                         return layer.msg(res.message)
                     }
                     layer.msg(res.message)
-                    location.href = '/article/art_issue.html'
+                    var htmlStr = template('tpl-edit', res.data)
+                    layer.open({
+                        type: 1,
+                        area: ['500px', '500px'],
+                        title: '编辑文章',
+                        content: htmlStr,
+                    });
                 }
             })
-
+            layer.close(index)
         })
     })
 })
